@@ -3,5 +3,10 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return render(request, "index.html")
+    context = {
+       "name":"Muzammil irshad",
+       "age":25,
+       "isMale":True
+    }
+    return render(request, "index.html", context)
 
