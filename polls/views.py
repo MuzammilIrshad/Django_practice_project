@@ -3,10 +3,10 @@ from django.http import HttpResponse
 
 
 def index(request):
-    context = {
-       "name":"Muzammil irshad",
-       "age":25,
-       "isMale":True
-    }
-    return render(request, "index.html", context)
+    return render(request, "index.html")
+
+def counter(request):
+    textCount = len(request.GET["text"].split())
+    print(textCount)
+    return render(request, "counter.html", {"count":textCount})
 
